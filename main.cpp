@@ -8,19 +8,19 @@ void nullOutput(QtMsgType type, const QMessageLogContext &context, const QString
 }
 int main(int argc, char *argv[])
 {
-	qInstallMessageHandler(nullOutput);
+    qInstallMessageHandler(nullOutput);
     QString splashscreen_path = "/usr/share/remarkable/poweroff.png";
 
     if (argc > 1) {
         splashscreen_path = argv[1];
     } else {
-		std::cout << "no argument supplied, showing the poweroff image\n";
+        std::cout << "no argument supplied, showing the poweroff image\n";
     }
     QImage img(splashscreen_path);
-	if (img.isNull()) {
-		std::cerr << "the image does not exist\n";
-		return 1;
-	}
+    if (img.isNull()) {
+        std::cerr << "the image does not exist\n";
+        return 1;
+    }
 
     auto size = EPFrameBuffer::framebuffer()->size();
     QRect rect(0,0, size.width(), size.height());
