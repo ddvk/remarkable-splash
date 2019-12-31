@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     QPainter painter(EPFrameBuffer::framebuffer());
     painter.drawImage(rect, img);
 
-    EPFrameBuffer::sendUpdate(rect, EPFrameBuffer::HighQualityGrayscale, EPFrameBuffer::FullUpdate);
+    EPFrameBuffer::sendUpdate(rect, EPFrameBuffer::HighQualityGrayscale, EPFrameBuffer::FullUpdate, true);
 
     return 0;
 }
